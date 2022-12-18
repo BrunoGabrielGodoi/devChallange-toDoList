@@ -1,11 +1,8 @@
-import { BsTrash } from "react-icons/bs";
-import { SlArrowUp, SlArrowDown } from "react-icons/sl";
 import { Button, Checkbox } from "@material-tailwind/react";
 
-import { motion } from "framer-motion";
 import { useState } from "react";
 
-function searchBar(props) {
+function SearchBar(props) {
   const addItemCB = props.addItemCB;
   let [inputValue, setInputValue] = useState("");
 
@@ -34,4 +31,4 @@ function searchBar(props) {
   );
 }
 
-export default searchBar;
+export default SearchBar;
