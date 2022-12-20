@@ -30,11 +30,14 @@ function ToDoList() {
   };
 
   const addItemCB = (item) => {
-    toDoList.push({
-      key: (toDoList[toDoList.length - 1]?.key ?? 0) + 1,
-      name: item,
-      done: false,
-    });
+    if (item) {
+      toDoList.push({
+        key: (toDoList[toDoList.length - 1]?.key ?? 0) + 1,
+        name: item,
+        done: false,
+      });
+      setToDoList([...toDoList]);
+    }
   };
 
   const deleteAllCompleted = () => {
