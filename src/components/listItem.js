@@ -1,21 +1,18 @@
 import { BsTrash } from "react-icons/bs";
-import { SlArrowUp, SlArrowDown } from "react-icons/sl";
-import { Checkbox } from "@material-tailwind/react";
 
-import { motion } from "framer-motion";
 const spring = {
   type: "spring",
   damping: 20,
   stiffness: 100,
 };
-function listItem(name, checked, key, changeStatusCB, deleteCB) {
+function ListItem(name, checked, key, changeStatusCB, deleteCB) {
   return (
     <div className="inline-flex flex-row w-full justify-between">
       <label className="mt-3 inline-flex ">
         <input
           key={key}
           type="checkbox"
-          className={` checkbox z-10 cursor-pointer border rounded box-border w-6 h-6 `}
+          className={`checkbox z-10 cursor-pointer border rounded box-border w-6 h-6 `}
           defaultChecked={checked}
           onChange={() => changeStatusCB(key)}
         />
@@ -29,11 +26,12 @@ function listItem(name, checked, key, changeStatusCB, deleteCB) {
         </span>
       </label>
       <BsTrash
-        className="w-6 h-6 place-self-end mr-3 text-[grey]"
+        href="#"
+        className={`w-6 h-6 place-self-end mr-3 cursor-pointer text-[grey]  hover:text-[#474747] active:text-[black] `}
         onClick={() => deleteCB(key)}
       />
     </div>
   );
 }
 
-export default listItem;
+export default ListItem;

@@ -1,4 +1,4 @@
-import listItem from "./listItem";
+import ListItem from "./listItem";
 
 function ItemList(props) {
   const { changeStatusCB, deleteItemCB, query, toDoList } = props;
@@ -10,7 +10,7 @@ function ItemList(props) {
           .map((item) => {
             return (
               <li key={item.key}>
-                {listItem(
+                {ListItem(
                   item.name,
                   item.done,
                   item.key,
