@@ -39,7 +39,7 @@ function NavBar(props) {
         <div className="flex mx-auto space-x-36 mb-[19px] ">
           <div
             id="navBar"
-            className={`rounded-t bg-blue-600 w-20 h-1 mt-[-4px] z-10 ${navBarPosition}`}
+            className={`transition transform duration-200 rounded-t bg-blue-600 w-20 h-1 mt-[-4px] z-10 ${navBarPosition}`}
           ></div>
         </div>
       </div>
