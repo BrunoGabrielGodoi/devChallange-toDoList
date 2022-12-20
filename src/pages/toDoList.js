@@ -4,6 +4,7 @@ import ItemList from "../components/itemList";
 import Title from "../components/title";
 import DeletaAllButton from "../components/deleteAll";
 import NavBar from "../components/navBar";
+import Footer from "../components/footer";
 
 function ToDoList() {
   const [toDoList, setToDoList] = useState(
@@ -61,24 +62,27 @@ function ToDoList() {
   };
 
   return (
-    <div
-      className="flex max-w-[570px] mx-auto flex-col h-screen"
-      color="#1E1E1E"
-    >
-      <Title />
-      <NavBar setQueryCB={(value) => setQuery(value)} />
-      <SearchBar addItemCB={(value) => addItemCB(value)} />
-      <ItemList
-        toDoList={toDoList}
-        query={query}
-        changeStatusCB={(key, event) => changeStatusCB(key, event)}
-        deleteItemCB={(key, event) => deleteItemCB(key, event)}
-      />
-      <DeletaAllButton
-        show={query}
-        deleteAllCompleted={() => deleteAllCompleted()}
-      />
-    </div>
+    <>
+      <div
+        className="flex max-w-[570px] mx-auto flex-col h-screen"
+        color="#1E1E1E"
+      >
+        <Title />
+        <NavBar setQueryCB={(value) => setQuery(value)} />
+        <SearchBar addItemCB={(value) => addItemCB(value)} />
+        <ItemList
+          toDoList={toDoList}
+          query={query}
+          changeStatusCB={(key, event) => changeStatusCB(key, event)}
+          deleteItemCB={(key, event) => deleteItemCB(key, event)}
+        />
+        <DeletaAllButton
+          show={query}
+          deleteAllCompleted={() => deleteAllCompleted()}
+        />
+      </div>
+      <Footer />
+    </>
   );
 }
 
