@@ -40,11 +40,11 @@
 ![image](https://user-images.githubusercontent.com/20050537/208322564-ac964c80-e24d-492b-8f26-855d51c479af.png)
 
 - What was your experience?
-This was my first front-end project so it was kind of hard to get React hooks and life cycle but nothing as hard as making things stay where they should D:
+  This was my first front-end project so it was kind of hard to get React hooks and life cycle but nothing as hard as making things stay where they should D:
 - What have you learned/improved?
-All the basic React hooks and so flex styling
+  All the basic React hooks and so flex styling
 - Your wisdom? :)
-Use state + use effect + object can give you some headaches 
+  Use state + use effect + object can give you some headaches
 
 Obs: My first little front-end project <3
 
@@ -55,7 +55,13 @@ Obs: My first little front-end project <3
 
 ## Features
 
-This application/site was created as a submission to a [DevChallenges](https://devchallenges.io/challenges) challenge. The [challenge](https://devchallenges.io/challenges/hH6PbOHBdPm6otzw2De5) was to build an application to complete the given user stories.
+This should work as a simple todo list would.
+Do you can:
+
+- Add items (wow!)
+- Mark them as completed
+- Filter items by status
+- Delete Items (Amazing)
 
 ## How To Use
 
