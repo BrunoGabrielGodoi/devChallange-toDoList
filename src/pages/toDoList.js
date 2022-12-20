@@ -23,11 +23,16 @@ function ToDoList() {
     setToDoList([...toDoList]);
   };
 
-  const deleteItemCB = (key, event) => {
+  const deleteItemCB = async (key, event) => {
     let index = toDoList.findIndex((x) => x.key == key);
+    toDoList[index].deleted = true;
+    setToDoList([...toDoList]);
+    await sleep(300);
     toDoList.splice(index, 1);
     setToDoList([...toDoList]);
   };
+
+  const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
   const addItemCB = (item) => {
     if (item) {
@@ -35,13 +40,23 @@ function ToDoList() {
         key: (toDoList[toDoList.length - 1]?.key ?? 0) + 1,
         name: item,
         done: false,
+        deleted: false,
       });
       setToDoList([...toDoList]);
     }
   };
 
-  const deleteAllCompleted = () => {
-    const newList = toDoList.filter((x) => x.done == false);
+  const deleteAllCompleted = async () => {
+    let newList = toDoList.map((x) => {
+      if (x.done != false) {
+        x.deleted = true;
+      }
+      return x;
+    });
+    setToDoList([...newList]);
+    await sleep(300);
+
+    newList = toDoList.filter((x) => x.done == false);
     setToDoList([...newList]);
   };
 
